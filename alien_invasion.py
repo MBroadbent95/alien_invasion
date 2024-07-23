@@ -43,15 +43,11 @@ class AlienInvasion:
             self.ship.update()
             self.bullets.update()
 
-
-
             # Get rid of bullets that have disappeared.
             self._update_bullets()
             # print(len(self.bullets))
             self._update_aliens()
             self._update_screen()
-
-           
 
     def _check_events(self):
         """Respond to ketpresses and mouse events."""
@@ -109,8 +105,15 @@ class AlienInvasion:
             if bullet.rect.bottom <= 0:
                 self.bullets.remove(bullet)
 
+        self._check_bullet_alien_collisions()
+
         # Check for any bullets that have hit aliens.
         # If so, get rid of the bullet and the alien.
+        # collisions = pygame.sprite.groupcollide(self.bullets, self.aliens, True, True)
+
+    def _check_bullet_alien_collisions(self):
+        """Respond to bullet-alien collisions."""
+        # Remove any bullets and aliens that have collided.
         collisions = pygame.sprite.groupcollide(self.bullets, self.aliens, True, True)
 
         if not self.aliens:
@@ -120,14 +123,14 @@ class AlienInvasion:
 
     def _update_screen(self):
         """Update images on ther screen, and flip to the new screen."""
-         # Redraw the screen during each pass through the loop.
+        # Redraw the screen during each pass through the loop.
         self.screen.fill(self.settings.bg_color)
 
         self.ship.blitme()
 
         for bullet in self.bullets.sprites():
             bullet.draw_bullet()
-        
+
         self.aliens.draw(self.screen)
 
         # Make the most recently drawn screen visible.
