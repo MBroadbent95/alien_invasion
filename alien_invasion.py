@@ -1,4 +1,4 @@
-import sys
+import sys, os
 from time import sleep
 import pygame
 
@@ -65,6 +65,7 @@ class AlienInvasion:
         """Respond to ketpresses and mouse events."""
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
+                self._check_high_score_and_save()
                 sys.exit()
 
             elif event.type == pygame.KEYDOWN:
@@ -120,7 +121,8 @@ class AlienInvasion:
         elif event.key == pygame.K_LEFT:
             self.ship.moving_left = True
         elif event.key == pygame.K_q:
-            sys.exit()
+            self._check_high_score_and_save()
+            sys.exit() #----------------------------------place new code here-----------
         elif event.key == pygame.K_SPACE:
             self._fire_bullet()
         elif event.key == pygame.K_p:
@@ -166,7 +168,7 @@ class AlienInvasion:
 
         if collisions:
             for aliens in collisions.values():
-            # self.stats.score += self.settings.alien_points
+                # self.stats.score += self.settings.alien_points
                 self.stats.score += self.settings.alien_points * len(aliens)
             self.sb.prep_score()
             self.sb.check_high_score()
@@ -288,6 +290,12 @@ class AlienInvasion:
                 self._ship_hit()
                 break
 
+    def _check_high_score_and_save(self):
+        """Check if the current score is greater than the high score and save if needed."""
+        if self.stats.score > self.stats.high_score:
+            self.stats.high_score = self.stats.score
+            print(f"New high score: {self.stats.high_score}")
+        self.stats._save_high_score()
 
 if __name__ == '__main__':
     # Make a game instance, and run the game.
