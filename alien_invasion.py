@@ -10,6 +10,7 @@ from ship import Ship
 from bullet import Bullet
 from alien import Alien
 
+
 class AlienInvasion:
     """Overall class to manage game assets and behaviour."""
 
@@ -99,9 +100,10 @@ class AlienInvasion:
             # Reset the game statistics.
             self.stats.reset_stats()
             self._start_game()
-            self.sb.prep_score()
-            self.sb.prep_level()
-            self.sb.prep_ships()
+            # self.sb.prep_score()
+            # self.sb.prep_level()
+            # self.sb.prep_ships()
+            self.sb.prep_images()
 
             # Get rid of any remaining aliens and bullets.
             self.aliens.empty()
@@ -122,7 +124,7 @@ class AlienInvasion:
             self.ship.moving_left = True
         elif event.key == pygame.K_q:
             self._check_high_score_and_save()
-            sys.exit() #----------------------------------place new code here-----------
+            sys.exit()  # ----------------------------------place new code here-----------
         elif event.key == pygame.K_SPACE:
             self._fire_bullet()
         elif event.key == pygame.K_p:
@@ -175,13 +177,25 @@ class AlienInvasion:
 
         if not self.aliens:
             # Destroy existing bullets and create new fleet.
-            self.bullets.empty()
-            self._create_fleet()
-            self.settings.increase_speed()
+            # self.bullets.empty()
+            # self._create_fleet()
+            # self.settings.increase_speed()
 
-            # Increase Level.
-            self.stats.level += 1
-            self.sb.prep_level()
+            # # Increase Level.
+            # self.stats.level += 1
+            # self.sb.prep_level()
+            self._new_level()
+
+    def _new_level(self):
+        """Reset the gamestate and increase the difficulty, level up!"""
+        # Destroy existing bullets and create new fleet.
+        self.bullets.empty()
+        self._create_fleet()
+        self.settings.increase_speed()
+
+        # Increase level.
+        self.stats.level += 1
+        self.sb.prep_level()
 
     def _update_screen(self):
         """Update images on ther screen, and flip to the new screen."""
@@ -217,7 +231,9 @@ class AlienInvasion:
 
         # Determine the number of rows of aliens that fit on the screen.
         ship_height = self.ship.rect.height
-        available_space_y = (self.settings.screen_height - (3 * alien_height) - ship_height)
+        available_space_y = (
+            self.settings.screen_height - (3 * alien_height) - ship_height
+        )
         number_rows = available_space_y // (2 * alien_height)
 
         # Create the full fleet of aliens.
@@ -297,7 +313,8 @@ class AlienInvasion:
             print(f"New high score: {self.stats.high_score}")
         self.stats._save_high_score()
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     # Make a game instance, and run the game.
 
     ai = AlienInvasion()
