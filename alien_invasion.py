@@ -48,9 +48,6 @@ class AlienInvasion:
 
         while True:
             # Watch for keyboard and mouse events.
-            # for event in pygame.event.get():
-            #     if event.type == pygame.QUIT:
-            #         sys.exit()
             self._check_events()
             if self.stats.game_active:
                 self.ship.update()
@@ -58,7 +55,6 @@ class AlienInvasion:
 
                 # Get rid of bullets that have disappeared.
                 self._update_bullets()
-                # print(len(self.bullets))
                 self._update_aliens()
             self._update_screen()
 
@@ -70,19 +66,9 @@ class AlienInvasion:
                 sys.exit()
 
             elif event.type == pygame.KEYDOWN:
-                # if event.key == pygame.K_RIGHT:
-                #   # Move the ship to the right.
-                #     # self.ship.rect.x+=1
-                #     self.ship.moving_right = True
-                # elif event.key == pygame.K_LEFT:
-                #     self.ship.moving_left = True
                 self._check_keydown_events(event)
 
             elif event.type == pygame.KEYUP:
-                # if event.key == pygame.K_RIGHT:
-                #     self.ship.moving_right = False
-                # elif event.key == pygame.K_LEFT:
-                #     self.ship.moving_left = False
                 self._check_keyup_events(event)
 
             elif event.type == pygame.MOUSEBUTTONDOWN:
@@ -100,9 +86,6 @@ class AlienInvasion:
             # Reset the game statistics.
             self.stats.reset_stats()
             self._start_game()
-            # self.sb.prep_score()
-            # self.sb.prep_level()
-            # self.sb.prep_ships()
             self.sb.prep_images()
 
             # Get rid of any remaining aliens and bullets.
@@ -116,6 +99,7 @@ class AlienInvasion:
             # Hide the mouse cursor.
             pygame.mouse.set_visible(False)
 
+    # note for read me - here are the controls, why they are used should be self explanitory.
     def _check_keydown_events(self, event):
         """Respond to keypresses."""
         if event.key == pygame.K_RIGHT:
@@ -124,11 +108,10 @@ class AlienInvasion:
             self.ship.moving_left = True
         elif event.key == pygame.K_q:
             self._check_high_score_and_save()
-            sys.exit()  # ----------------------------------place new code here-----------
+            sys.exit()
         elif event.key == pygame.K_SPACE:
             self._fire_bullet()
         elif event.key == pygame.K_p:
-            # Press p to start playing.--------------------------------------------
             self._start_game()
 
     def _start_game(self):
@@ -159,10 +142,6 @@ class AlienInvasion:
 
         self._check_bullet_alien_collisions()
 
-        # Check for any bullets that have hit aliens.
-        # If so, get rid of the bullet and the alien.
-        # collisions = pygame.sprite.groupcollide(self.bullets, self.aliens, True, True)
-
     def _check_bullet_alien_collisions(self):
         """Respond to bullet-alien collisions."""
         # Remove any bullets and aliens that have collided.
@@ -170,20 +149,11 @@ class AlienInvasion:
 
         if collisions:
             for aliens in collisions.values():
-                # self.stats.score += self.settings.alien_points
                 self.stats.score += self.settings.alien_points * len(aliens)
             self.sb.prep_score()
             self.sb.check_high_score()
 
         if not self.aliens:
-            # Destroy existing bullets and create new fleet.
-            # self.bullets.empty()
-            # self._create_fleet()
-            # self.settings.increase_speed()
-
-            # # Increase Level.
-            # self.stats.level += 1
-            # self.sb.prep_level()
             self._new_level()
 
     def _new_level(self):
@@ -224,7 +194,6 @@ class AlienInvasion:
         # Create an alien and find the number of aliens in a row.
         # Spacing between each alien is equal to one alien width.
         alien = Alien(self)
-        # self.aliens.add(alien)
         alien_width, alien_height = alien.rect.size
         available_space_x = self.settings.screen_width - (2 * alien_width)
         number_aliens_x = available_space_x // (2 * alien_width)

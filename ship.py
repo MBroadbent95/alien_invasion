@@ -16,7 +16,6 @@ class Ship(Sprite):
         try:
 
             self.image = pygame.image.load('images/ship.bmp')
-            # images\ship.bmp
             self.rect = self.image.get_rect()
         except pygame.error as e:
             print(f"Unable to load image {e}")
@@ -35,11 +34,6 @@ class Ship(Sprite):
 
     def update(self):
         """Update the ship's position based on the movement flags."""
-        # if self.moving_right:
-        #     self.rect.x += 1
-        # if self.moving_left:
-        #     self.rect.x -= 1
-
         # Update the ship's x value, not the rect.
         if self.moving_right and self.rect.right < self.screen_rect.right:
             self.x += self.settings.ship_speed

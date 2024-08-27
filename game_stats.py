@@ -19,18 +19,6 @@ class GameStats:
         self.score = 0
         self.level = 1
 
-    # def load_high_score(self):
-    #     try:
-    #         current_dir = os.path.dirname(__file__)
-    #         file_path = os.path.join(current_dir, "high_score.txt")
-    #         with open(file_path, encoding="utf-8") as file:
-    #             return int(file.read())
-    #     except FileNotFoundError:
-    #         return 0
-    #     except Exception as e:
-    #         print(f"An error occurred: {e}")
-    #         return 0
-
     def load_high_score(self):
         try:
             current_dir = os.path.dirname(__file__)
@@ -61,7 +49,7 @@ class GameStats:
 
         high_score = (
             self.high_score
-        )  # Assuming self.stats.high_score holds the high score
+        )
 
         try:
             with open(file_path, mode="w", encoding="utf-8") as file:
