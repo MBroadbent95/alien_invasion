@@ -60,78 +60,50 @@ This clearly was not a problem for the author but just needed a workaround for m
 
 ![Filepath Trouble](-----------------------------------------------------------------------------------------)
 
-This bump in the road was the only real obstruction I faced during development, the rest of my experience was pleasantly straightforward.
+This bump in the road was the only real obstruction I faced during development, the rest of my experience was  straightforward.
 
 Build/Code Process:
 
-This project needed a good plan if I was to make it through to the end with any app to show for it. As such, my inner project manager took the wheel and I threw together a rough road map for the time ahead of me. Call it a quirk but I love to know where I am in the wider project picture and can't stand now knowing how much needs to be done in X time.
-Please see my roadmap below, I added a couple of tasks as I went but the wider picture remained consistent.
-![Project 4 Roadmap](https://i.imgur.com/JosN2xk.png)
+As mentioned before, this project was primarily guided with the aid of the "Python Crash Course 3rd Edition" by Eric Matthes.
+My build process revolved around following the helpful steps laid out before me.
 
-Much like my previous projects, I decided it would be best to start out with a functional back end. Once that is up and tested, we would then proceed to create a front end and carry on.
-My instructors had recently shown me how to test back end functions through automatic testing, this appeared to be a godsend with how much time it would save me testing each individual endpoint on Insomnia.
-Once they were written, the tests returned with positive results, my endpoints were working as intended.
-Tests are interesting pieces of code to write and execute, I know this is a practice which I will use in the future considering how useful it was.
+The code process itself took place just over a month in length, which is far less than it felt like.
 
-Here are a couple of code snippets testing get and delete respectively, take a look!:
-![Testing get and Delete](https://i.imgur.com/5xzZ1YS.png)
+Because this was not necessarily my designed code, as a good student, I would attempt to understand it at each step of the way. Much of the game's methods were implemented via pygame - which is an open source library of python modules designed for writing video games. Whilst I may have not known how each module was exactly written, I could see them being used very effectively by Mr Matthes. This brought me great confidence to infer what exactly each component was doing and understand why the game was written as it was.
+For example, throughout the game you would need to define both the internal score number, and then in order to display it, you would need to create a new image each time the score updated and project that onto the player's screen. This can be seen from the below code snippet.
+![Score Image Conversion]()
 
-This was my first project using a Python, Flask & PostgreSQL back end, so being relatively new, i lifted a lot of the code from previous coursework and re-applied it to my current project, this worked like a charm and i was able to have my back end up, and tested before the end of the second day, a little behind schedule but the roadmap was optimistic.
 
-At the start of the following week, I was to build my basic front end structure, frameworks and all, and get it talking with my backend so that I can start meaningfully assembling the UI.
-In a previous project, I had started using TailwindCSS for my front end framework. TailwindCSS makes CSS styling so smooth and painless as possible, whilst TailwindCSS can be annoying to install correctly, I'm glad I used it in this project too.
+Building Alien Invasion in python has given me a more in depth understanding of the popular industry practice, object oriented programming.
 
-On Tuesday I looked into enabling an image upload system so that my users could include a picture of their recipe.
-Personally I rarely cook food from recipes without illustrations so this was essential.
-Unfortunately this research proved to be much longer than anticipated and I couldn't get my head around the technology effectively.
-At this time I was experiencing errors in other areas of the project, namely in the comments and recipe submission/ posting parts. In light of this, I decided it was best to keep the image upload system basic with Imgur links and focus on debugging my other components.
-Moving forward I would be interested in learning the technology for image uploading and display, we all know that Imgur uploading is very clunky and not friendly towards the User Experience.
+Just from scroilling alone, you can see how much more clean and easier to read everything is when compared to my first attempt at alien invaders back for my first project in vanilla JavaScript.
+![Vanilla JS from Proj 1]()
 
-As I recall, on Wednesday I was experiencing persistent issues with my comments system which required attention. I had noticed that it stopped working once I modified my comments serializer on my back end to include Foreign Keys or include_fk. I needed the code to stay the same if I was to keep my Get_Comment function from breaking. I had a crazy idea to create a new comment serializer with everything the same except the include_fk. To my surprise this worked like a charm and whilst it feels like a hack, like a dumb solution, my instructor assured me that it was perfectly fine and in fact not a hack, but it sure feels like one.
-See my 'hack' code below haha.
-![Super Comment Serializer](https://i.imgur.com/22jV6NY.png)
+![Alien Invasion Clean OOP]()
 
-Thursday was the day before deployment, so ideally MVP would be achieved in order for a smooth deploy process.
-Since debugging was something I did as I went along, by midday of thursday, MVP was achieved and I could style, test any endpoints I felt anxious about, and finally populate my api with some tasty recipes.
-Data population has always been a tedious part of the development process, so it was always gonna take a dedicated period of time to populate correctly. I decided on 8 recipes as a start to populate the page, 2 users, and 2 comments. We could always log in to add more manually, or even re-seed, I did re-seed a couple of times in this project, initially to check if everything was working as it should and then finally to populate.
+In the months leading up to assembling the project, I was working my way through the crash course book.
+This was a very convenient way of expanding what I had previously learned about python whilst also balancing my obligations.
+At about 80% of the way through this project, I had landed a new job and could not spend as much time on development as I had previously.
+This resulted in the final stages of the project feeling a lot more longer than they actually were. In light if this, I am rather proud that I was able to progress the project despite my higher priority obligations. 
 
-![Seed](https://i.imgur.com/RWt8jEV.png)
-
-The final couple of days I spent ad-hoc debugging and placing the finishing styles onto my front end.
-The live URL is ![Tasteful Trove](https://main--tasteful-trove.netlify.app/)
-Feel free to sign up, add a recipe and comments if you wish. I'm rather happy with the deployed result, there are many improvements to be made and a couple of bugs which I will discuss shortly.
-![Tasteful Trove Webpage](https://i.imgur.com/yxnY0om.png)
-
-Moving forward
 
 Challenges:
 
-- A lot of the way Flask works was confusing for me in the beginning, but the more I got my hands on it the more it seemed to make sense.
+- It took me a short moment to understand what Mr Matthes was assembling with each part and how it was relevant to the wider project. I am confident that this is a common feeling with Junior's getting to grips with the finer aspects of project design.
 
-- One challenge was in the comment serializer, include_fk, this broke my comment system once I added it, and whilst there most certainly is going to be a more elegant solution, my solution was to just create another serializer for posting comments and keep the old one for GET requests. I created the SuperComment serializer which was literally the exact same minus the include_fk and a rename. Just one of those programming quirks which kind of disappoint you when they work.
+- A challenge previously mentioned was the need to specify my file path in order to write files. During my self education in the previous chapters of the Crash Course book, the advised code did not work on my device. In light of this, I searched for a work around and found an appropriate solution. This solution involved importing os at the top, defining a filepath and using that in my module. This solved the problem and provided me a solution to call upon should this problem occur again in future.
 
-- Model adjustment, despite saying in my mission statement that I was going to include image uploads, I actually forgot to include images in my initial recipe model, this wasn't super impactful over the span of the project but it does mean I need to bust my own ass to plan a bit more.
+Wins/ Key Learnings/ Takeaways:
 
-Wins:
-
-- Making everything work together was the big victory here. Flask and SQLAlchemy work a bit differently to MongoDB and express, for example MongoDB gives you an id automatically but postgreSQL does not, this was initially rather annoying but I like that I was able to figure out a couple of these quirks throughout this project and make them work for what I wanted to achieve.
-- Effective planning was also a considerable win here. Knowing at what stage I am at allows me to assess what to do next and how long I have to spend. Had I not had a roadmap, it is very possible I may have lost more time trying to integrate image uploads and fall behind schedule.
-
-Key Learnings/Takeaways:
-
-This project has helped me develop my confidence with utilising alternative backend frameworks and doing the necessary tasks to understand and integrate those newer frameworks, like Python & Flask, with older more familiar ones such as React.
-
-I have demonstrated to myself that whilst my final product may not be perfect and could probably use stronger styles and a couple more features, I can certainly deliver a clean and functional full stack project within just over a week without asking for much help and assistance. This I am very proud of and brings me confidence moving into future employment.
+- I managed to follow the documantation to the letter and adapt appropriately whenever something did not go as planned. I am confident that this demonstrates my problem solving ability as a Junior and would look good to prospective employment.
+- My ability to program using Python has grown, my confidence will reflect this.
 
 Bugs:
 
-- The option to delete your original user posted comment only appears after you navigate to another page and then return.
-- Infrequently, the images of particular recipes will not load correctly.
+- During development I have not become aware of any substantial bugs. Should any occur, please reach out to me.
 
 Future Improvements:
 
-- Favourites for users, would be awful nice if I could create a shortlist of recipes I like the look of instead of needing to find them every time. It's fine when there's a small number, but once we get over 30 recipes this will gradually make the user experience suffer.
+- Power ups, occasionally a power up would drop from the top of the screen which would enhance the player. This could include anything from increasing the width of the bullet 'WIDE SHOT', to increasing the rate of fire with unlimited shots (currently the shot limit is 3).
 
-- Admin User, An admin user would've been great to keep the page in check, this can be done with minimal adjustments but my roadmap demanded my attention in other areas.
-
-- User Profile Page, this would have been a large undertaking from scratch and was unlikely to get finished in time if i wanted a smooth mvp, but ideally this feature would include the ability to delete your data, upload a profile picture to add to your comment along with your name, and possibly a dropdown menu to access your favourites.
+- The aliens could start to drop bombs. Currently the only win condition for the aliens is to reach the bottom of the screen. This would add an additional layer of difficulty and increase player engagement.
