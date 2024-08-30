@@ -58,7 +58,7 @@ For this project, I followed the guide provided to me by the extremely helpful a
 There were complications along the way, such as filepath planning for reading documents.
 This clearly was not a problem for the author but just needed a workaround for my experience, you will see from the image below, my solution.
 
-![Filepath Trouble](-----------------------------------------------------------------------------------------)
+![Filepath Trouble](./images/filepath_trouble.png)
 
 This bump in the road was the only real obstruction I faced during development, the rest of my experience was  straightforward.
 
