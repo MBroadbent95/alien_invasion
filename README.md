@@ -1,4 +1,4 @@
-ReadMe Sections
+Alien Invasion ReadMe
 
 Description
 
@@ -19,21 +19,16 @@ Description
 My thought process was, since I had previously completed a similar project in vanilla JavaScript to cut my teeth on said software, then it would be good practice to see if i could do something similar on this alternate and in demand programming language.
 In a nutshell, this is the classic Space Invaders. Constructed in vanilla Python with the aid of PyGame.
 
-Deployment link
-
-tbc ---------------------------------------------WATCH THIS SPACE-------------------------------------------
 
 Instructions
 
 Here include the information on where the deployed project can be found. If login details are needed to access the full project, make sure you include them.
 
-- Here is the deployment link to my project
-  [Link](INSERT LINK HERE)
+- Here is the GitHub link to my project:
+  [Click Here](https://github.com/MBroadbent95/alien_invasion/tree/master)
 
   Getting Started/Code Installation:
 
-- Feel free to access my code via my GitHub repository:
-  Alien Invasion - ------------------ WATCH THIS SPACE ----------------------------------------------
   Necessary Installations are as follows:
   Python
   Pygame
@@ -71,15 +66,15 @@ The code process itself took place just over a month in length, which is far les
 
 Because this was not necessarily my designed code, as a good student, I would attempt to understand it at each step of the way. Much of the game's methods were implemented via pygame - which is an open source library of python modules designed for writing video games. Whilst I may have not known how each module was exactly written, I could see them being used very effectively by Mr Matthes. This brought me great confidence to infer what exactly each component was doing and understand why the game was written as it was.
 For example, throughout the game you would need to define both the internal score number, and then in order to display it, you would need to create a new image each time the score updated and project that onto the player's screen. This can be seen from the below code snippet.
-![Score Image Conversion]()
+![Score Image Conversion](./images/score_image_conv.png)
 
 
 Building Alien Invasion in python has given me a more in depth understanding of the popular industry practice, object oriented programming.
 
 Just from scroilling alone, you can see how much more clean and easier to read everything is when compared to my first attempt at alien invaders back for my first project in vanilla JavaScript.
-![Vanilla JS from Proj 1]()
+![Vanilla JS from Proj 1](./images/vaniila_js_proj1.png)
 
-![Alien Invasion Clean OOP]()
+![Alien Invasion Clean OOP](./images/alien_inv_cln_oop.png)
 
 In the months leading up to assembling the project, I was working my way through the crash course book.
 This was a very convenient way of expanding what I had previously learned about python whilst also balancing my obligations.
