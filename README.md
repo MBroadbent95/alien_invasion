@@ -6,14 +6,14 @@ Description
   at the bottom center of the screen. The player can move the
   ship right and left using the arrow keys and shoot bullets using
   the spacebar. When the game begins, a fleet of aliens fills the
-  sky and moves across and down the screen. The player shoots
+  sky and move across and down the screen. The player shoots
   and destroys the aliens. If the player shoots all the aliens, a new
   fleet appears that moves faster than the previous fleet. If any
   alien hits the player’s ship or reaches the bottom of the screen,
   the player loses a ship. If the player loses three ships, the game
   ends.
 
-- This was my first independant project since completing my bootcamp at the start of the year. I completed this project solo, over the course of a 1 month whilst balancing both professional and social obligations.
+- This was my first independent project since completing my bootcamp at the start of the year. I completed this project solo, over the course of a 1 month whilst balancing both professional and social obligations.
   My main goal was to increase my proficiency with Python, gaining more confidence and programming experience is essential for an up and coming junior/ graduate looking to break into the industry.
 
 My thought process was, since I had previously completed a similar project in vanilla JavaScript to cut my teeth on said software, then it would be good practice to see if i could do something similar on this alternate and in demand programming language.
@@ -50,7 +50,7 @@ Brief:
 Planning:
 
 For this project, I followed the guide provided to me by the extremely helpful and well written "Python Crash Course 3rd Edition" by the talented Eric Matthes. Like with documentation, I would read the plan provided by PCC and then implement it piece by piece.
-There were complications along the way, such as filepath planning for reading documents.
+There were complications along the way, such as file path planning for reading documents.
 This clearly was not a problem for the author but just needed a workaround for my experience, you will see from the image below, my solution.
 
 ![Filepath Trouble](./images/filepath_trouble.png)
@@ -71,15 +71,15 @@ For example, throughout the game you would need to define both the internal scor
 
 Building Alien Invasion in python has given me a more in depth understanding of the popular industry practice, object oriented programming.
 
-Just from scroilling alone, you can see how much more clean and easier to read everything is when compared to my first attempt at alien invaders back for my first project in vanilla JavaScript.
+Just from scrolling alone, you can see how much more clean and easier to read everything is when compared to my first attempt at alien invaders back for my first project in vanilla JavaScript.
 ![Vanilla JS from Proj 1](./images/vaniila_js_proj1.png)
 
 ![Alien Invasion Clean OOP](./images/alien_inv_cln_oop.png)
 
 In the months leading up to assembling the project, I was working my way through the crash course book.
 This was a very convenient way of expanding what I had previously learned about python whilst also balancing my obligations.
-At about 80% of the way through this project, I had landed a new job and could not spend as much time on development as I had previously.
-This resulted in the final stages of the project feeling a lot more longer than they actually were. In light if this, I am rather proud that I was able to progress the project despite my higher priority obligations. 
+About 80% of the way through this project, I had landed a new job and could not spend as much time on development as I had previously.
+This resulted in the final stages of the project feeling a lot longer than they actually were. In light of this, I am rather proud that I was able to progress the project despite my higher priority obligations. 
 
 
 Challenges:
@@ -90,7 +90,7 @@ Challenges:
 
 Wins/ Key Learnings/ Takeaways:
 
-- I managed to follow the documantation to the letter and adapt appropriately whenever something did not go as planned. I am confident that this demonstrates my problem solving ability as a Junior and would look good to prospective employment.
+- I managed to follow the documentation to the letter and adapt appropriately whenever something did not go as planned. I am confident that this demonstrates my problem solving ability as a Junior and would look good to prospective employment.
 - My ability to program using Python has grown, my confidence will reflect this.
 
 Bugs:
